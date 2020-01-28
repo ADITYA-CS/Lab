@@ -53,6 +53,36 @@ public:
 	{
 		return top == NULL;
 	}
+	int nodeCount()
+	{
+		if(isEmpty())
+		{
+			return 0;
+		}
+		int x = 0;
+		node *temp = top;
+		while(temp)
+		{
+			x++;
+			temp = temp->next;
+		}
+		return x;
+	}
+	void display()
+	{
+		if(isEmpty())
+		{
+			cout << " Stack is empty\n";
+			return;
+		}
+		cout << " Stack\n";
+		node *temp = top;
+		while(temp)
+		{
+			cout << " " << temp->data << "\n";
+			temp = temp->next;
+		}
+	}
 };
 
 int main()
@@ -66,6 +96,8 @@ int main()
 		cout << " 2.\tPop\n";
 		cout << " 3.\tPeek\n";
 		cout << " 4.\tisEmpty\n";
+		cout << " 5.\tNumber of elements\n";
+		cout << " 6.\tDisplay stack\n";
 		cout << " Option : ";
 		cin >> op;
 		switch(op)
@@ -92,6 +124,12 @@ int main()
 					cout << " Stack is empty.\n";
 				else
 					cout << " Stack is not empty.\n";
+				break;
+			case 5:
+				cout << " Number of elements : " << s.nodeCount() << "\n";
+				break;
+			case 6:
+				s.display();
 				break;
 		}
 	}
