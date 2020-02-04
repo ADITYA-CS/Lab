@@ -52,7 +52,7 @@ public:
 			sptr = sptr->next;
 			fptr = fptr->next->next;
 		}
-		cout << " " <<  sptr->next->data << "\n";
+		cout << " Mid-Element : " <<  sptr->next->data << "\n";
 	}
 };
 int main()
