@@ -1,8 +1,9 @@
 #include <iostream>
 #include <cmath>
+#include <sstream>
 using namespace std;
 
-struct node 
+struct node
 {
 	double x;
 	node * next;
@@ -20,7 +21,7 @@ private:
 public:
 	poly()
 	{
-		head = tail = NULL;	
+		head = tail = NULL;
 	}
 	void create(double a)
 	{
@@ -50,20 +51,22 @@ int main()
 {
 	poly P1, P2, result;
 	double c;
-
-	cin >> c;
-	P1.create(c);
-	cin >> c;
-	P1.create(c);
-	cin >> c;
-	P1.create(c);
+	string str;
+	getline(cin, str);
+	istringstream in(str);
+	while(in >> c)
+	{
+		P1.create(c);
+	}
 	P1.display();
 	cout << "\n";
 
-	cin >> c;
-	P2.create(c);
-	cin >> c;
-	P2.create(c);
+	getline(cin, str);
+	istringstream In(str);
+	while(In >> c)
+	{
+		P2.create(c);
+	}
 	P2.display();
 	cout << "\n";
 
@@ -87,5 +90,5 @@ poly intersect(poly p1, poly p2)
 		}
 		ptr1 = ptr1->next;
 	}
+	return result;
 }
-

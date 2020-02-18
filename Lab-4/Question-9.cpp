@@ -45,16 +45,18 @@ public:
 	{
 		cout << " ";show(head);
 	}
-	void Add(list L)
+	void Add(list &L)
 	{
+
 		node * temp = L.head;
 		while(temp)
 		{
 			insert(temp->data);
 			temp = temp->next;
 		}
-		L.tail->next = head;
-		L.tail = tail;
+		tail->next = L.head;
+		L.head = tail;
+		L.head = head;
 	}
 };
 
@@ -83,7 +85,7 @@ int main()
 				R.Add(L);
 			case 3:
 				L.display();
-		
+
 		}
 	}
 }
