@@ -25,7 +25,7 @@ private:
 			show(ptr->next);
 		}
 	}
-	
+
 public:
 	list()
 	{
@@ -49,6 +49,24 @@ public:
 	}
 	void Reverse(int k)
 	{
+		node *temp = head;
+		node *prev, *ptr, *next;
+		prev = NULL;
+		while(temp)
+		{
+			ptr = temp;
+			for(int i = 0; i < k && ptr; i++)
+			{
+				next = ptr->next;
+				ptr->next = prev;
+				prev = ptr;
+				ptr = next;
+			}
+			temp = ptr;c
+		}
+	}
+	/*void Reverse(int k)
+	{
 		stack<int> s;
 		node *ptr = head;
 		while(k--)
@@ -61,7 +79,7 @@ public:
 		{
 			ptr->data = s.top(); s.pop(); ptr = ptr->next;
 		}
-	} 
+	}*/
 };
 
 int main()
@@ -91,7 +109,7 @@ int main()
 				L.Reverse(option);
 			case 3:
 				L.display();
-		
+
 		}
 	}
 }

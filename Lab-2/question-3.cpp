@@ -1,14 +1,19 @@
 #include <iostream>
 using namespace std;
 
-int natural_sum(int n)
+void print(int n)
 {
-	return n ? n + natural_sum(n-1) : 0;
+	if(n)
+	{
+		print(n-1);
+		cout << "\n" << n;
+	}
 }
 int main()
 {
 	int n;
-	cout << " Enter a number : ";
+	cout << " n = ";
 	cin >> n;
-	cout << " Natural sum upto " << n << " is " << natural_sum(n) << ".\n";
+	print(n);
+	cout << "\n";
 }
