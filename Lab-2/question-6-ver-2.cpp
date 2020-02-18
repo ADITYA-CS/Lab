@@ -3,7 +3,7 @@ using namespace std;
 
 bool palindrome(string str, int i = 0)
 {
-    return i < str.size() ? str[i] == str[str.size()-i-1] && palindrome(str, i+1) : true;
+    return i < str.size()/2 ? str[i] == str[str.size()-i-1] && palindrome(str, i+1) : true;
 }
 
 int main()
