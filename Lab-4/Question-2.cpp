@@ -47,39 +47,26 @@ public:
 	{
 		cout << " ";show(head);
 	}
-	void Reverse(int k)
-	{
-		node *temp = head;
-		node *prev, *ptr, *next;
-		prev = NULL;
-		while(temp)
-		{
-			ptr = temp;
-			for(int i = 0; i < k && ptr; i++)
-			{
-				next = ptr->next;
-				ptr->next = prev;
-				prev = ptr;
-				ptr = next;
-			}
-			temp = ptr;c
-		}
-	}
-	/*void Reverse(int k)
-	{
-		stack<int> s;
-		node *ptr = head;
-		while(k--)
-		{
-			s.push(ptr->data);
-			ptr = ptr->next;
-		}
-		ptr = head;
-		while(!s.empty())
-		{
-			ptr->data = s.top(); s.pop(); ptr = ptr->next;
-		}
-	}*/
+	Node * reverseK(Node *head, int k)
+    {
+        Node *ptr, *prev, *next;
+        ptr = head, prev = NULL;
+        for(int i = 0; i < k && ptr; i++)
+        {
+            next = ptr->next;
+            ptr->next = prev;
+            prev = ptr;
+            ptr = next;
+        }
+
+        if(ptr)
+            head->next = removeK(ptr, k);
+        return prev;
+    }
+    void reverseK(int k)
+    {
+        head = reverseK(head, k);
+    }
 };
 
 int main()
@@ -106,7 +93,7 @@ int main()
 			case 2:
 				cout << " K = ";
 				cin >> option;
-				L.Reverse(option);
+				L.reverseK(option);
 			case 3:
 				L.display();
 

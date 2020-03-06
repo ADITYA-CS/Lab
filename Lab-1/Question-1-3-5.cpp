@@ -261,6 +261,23 @@ public:
 				p->data -= q->data;
     	}
   	}
+	Node * swapTwo( Node *ptr)
+	{
+		if(!ptr || !(ptr->next))
+			return ptr;
+
+		Node *p, *n;
+		p = ptr->next;
+		n = p->next;
+
+		p->next = ptr;
+		ptr->next = swapTwo(n);
+		return p;
+	}
+	void swapAdj()
+	{
+		head = swapTwo(head);
+	}
 };
 
 int main ()
@@ -282,7 +299,7 @@ int main ()
       	cout << " 11.\tSearch\n";
       	cout << " 12.\tReverse display\n";	//question 3rd
       	cout << " 13:\tSwap adjacent\n";	//question 5th
-      	
+
   	while (1)
   	{
       	cout << "\v Enter your choice : ";
