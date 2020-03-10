@@ -69,6 +69,7 @@ string infixToPostfix(string s)
 					res += st.top();
 					st.pop();
 				}
+				st.push(s[i]);
 				i++;
 				continue;
 			}
