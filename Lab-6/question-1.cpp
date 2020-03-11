@@ -9,17 +9,22 @@ int precedence(char ch);
 
 int main()
 {
-	string infix;
-	cin >> infix;
-	string postfix = infixToPostfix(infix);
-	cout << postfix << "\n";
+    int t;
+    cin >> t;
+    while(t--)
+    {
+	       string infix;
+	       cin >> infix;
+	       string postfix = infixToPostfix(infix);
+	       cout << postfix << "\n";
+    }
 }
 
 string infixToPostfix(string s)
 {
 	string res = "";
 	stack<char> st;
-	
+
 	int i = 0;
 	while(s[i])
 	{
@@ -30,7 +35,7 @@ string infixToPostfix(string s)
 		}
 		else
 		{
-			if(st.empty() || st.top() == '(')
+			if(st.empty() || (st.top() == '(' && s[i] != ')'))
 			{
 				st.push(s[i++]);
 				continue;
@@ -77,10 +82,11 @@ string infixToPostfix(string s)
 	}
 	while(!st.empty())
 	{
-		res += st.top();
+        if(st.top() != '(')
+		      res += st.top();
 		st.pop();
 	}
-	
+
 	return res;
 }
 
