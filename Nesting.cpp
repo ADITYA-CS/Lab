@@ -5,12 +5,12 @@ int main()
 {
     int test;
     scanf("%d",&test );
-    for(int test_case = 0; test_case < test; test_case++)
+    for(int test_case = 1; test_case <= test; test_case++)
     {
         char input[101];
         scanf("%s", input);
         string ans = "";
-        int p = 0;
+        int p = 0, t;
         for(int i = 0, j = strlen(input); i < j; i++)
         {
             t = input[i] - '0';
@@ -31,6 +31,7 @@ int main()
             ans += ')';
             p--;
         }
-        cout << str << '\n';
+        printf("Case #%d: ", test_case);
+        cout << ans << '\n';
     }
 }
