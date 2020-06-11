@@ -3,6 +3,7 @@ using namespace std;
 
 struct Node{
     int data;
+    int count;
     Node *left, *right;
     Node(int);
 };
@@ -72,6 +73,7 @@ int main(){
 }
 Node :: Node(int el){
     data = el;
+    count = 1;
     left = right = nullptr;
 }
 
@@ -101,7 +103,8 @@ void BinarySearchTree :: PreOrder(){
 
 void BinarySearchTree :: PreOrder(Node * root){
     if(root){
-        cout << root->data << " ";
+        for(int i = 0; i < root->count; i++)
+            cout << root->data << " ";
         PreOrder(root->left);
         PreOrder(root->right);
     }
@@ -119,7 +122,8 @@ void BinarySearchTree :: PostOrder(Node * root){
     if(root){
         PostOrder(root->left);
         PostOrder(root->right);
-        cout << root->data << " ";
+        for(int i = 0; i < root->count; i++)
+            cout << root->data << " ";
     }
 }
 
@@ -133,7 +137,8 @@ void BinarySearchTree :: InOrder(){
 void BinarySearchTree :: InOrder(Node * root){
     if(root){
         InOrder(root->left);
-        cout << root->data << " ";
+        for(int i = 0; i < root->count; i++)
+            cout << root->data << " ";
         InOrder(root->right);
     }
 }
@@ -149,7 +154,7 @@ void BinarySearchTree :: Insert(int el){
 
 void BinarySearchTree :: Insert(Node *root, int el){
     if(root->data == el){
-        cout << "Can't Insert duplicate value\n";
+        root->count += 1;
         return;
     } else if (el < root->data){
         if(root->left){
