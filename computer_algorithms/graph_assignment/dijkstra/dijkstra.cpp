@@ -2,14 +2,14 @@
 using namespace std;
 
 vector<list<pair<int, int>>> g;
-vector<int> distance;
+vector<int> dist;
 vector<int> parent;
 int n;
 
 void Dijkstra(int source) {
-  distance.resize(n, INT_MAX);
+  dist.resize(n, INT_MAX);
   parent.resize(n, -1);
-  distance[source] = 0;
+  dist[source] = 0;
 
   priority_queue<pair<int, int>> pq;
   pq.push({0, source});
@@ -17,15 +17,15 @@ void Dijkstra(int source) {
     int u = pq.top().second;
     int dis = -pq.top().first;
     pq.pop();
-    if (dis != distance[u]) continue;
+    if (dis != dist[u]) continue;
 
     for (auto e : g[u]) {
       int v = e.first;
       int w = e.second;
-      if (dis + w < distance[v]) {
+      if (dis + w < dist[v]) {
         parent[v] = u;
-        distance[v] = dis + w;
-        pq.push({-distance[v], v});
+        dist[v] = dis + w;
+        pq.push({-dist[v], v});
       }
     }
   }
@@ -56,10 +56,15 @@ int main() {
   int e;
   cin >> e;
   g.resize(n);
-  for (int i = 0; i < n; i++) {
-    int u, v;
-    cin >> u >> v;
-    g[u].push_back(v);
-    g[v].push_back(u);
+  for (int i = 0; i < e; i++) {
+    int u, v, w;
+    cin >> u >> v >> w;
+    if (u == v) continue;
+    g[u].push_back({v, w});
+    g[v].push_back({u, w});
   }
+
+  Dijkstra(0);
+  int destination = 86525;
+  Path(0, destination);
 }
