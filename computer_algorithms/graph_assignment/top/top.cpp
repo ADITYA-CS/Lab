@@ -4,7 +4,7 @@ using namespace std;
 vector<list<int>> g;
 int n;
 
-void TopologicalSort(int u, vector<bool> &visited, stack<int>& order) {
+void TopologicalSort(int u, vector<bool> &visited, stack<int> &order) {
   visited[u] = true;
   for (auto v : g[u]) {
     if (visited[v]) {
@@ -18,11 +18,8 @@ void TopologicalSort(int u, vector<bool> &visited, stack<int>& order) {
 }
 
 void Print(vector<int> &v) {
-  for (int i :v) {
-    if(i == -1)
-      cout << "\n";
-    else 
-      cout << i << " ";
+  for (int i : v) {
+    cout << i << " --> ";
   }
 }
 
@@ -37,7 +34,6 @@ void TopologicalSort() {
         topological_sorted_item.push_back(order.top());
         order.pop();
       }
-      topological_sorted_item.push_back(-1);
     }
   }
   Print(topological_sorted_item);
@@ -45,12 +41,15 @@ void TopologicalSort() {
 
 int main() {
   cin >> n;
-  int e; cin >> e;
+  n = n + 1;
+  int e;
+  cin >> e;
   g.resize(n);
   for (int i = 0; i < e; i++) {
-    int u, v; cin >> u >> v;
+    int u, v;
+    cin >> u >> v;
     g[u].push_back(v);
-    g[v].push_back(u);
   }
+  cout << " Topological order : ";
   TopologicalSort();
 }

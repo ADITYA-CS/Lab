@@ -45,6 +45,7 @@ bool FoundMst() {
 
 void PrintMst() {
   int flag = 1;
+  int b = 1000;
   for (int i = 1; i < n; i++) {
     if (flag)
       printf(", ");
@@ -52,6 +53,9 @@ void PrintMst() {
     flag = (flag + 1) % 5;
     if (!flag)
       printf("\n");
+    b--;
+    if(!b)
+      break;
   }
 }
 
@@ -66,8 +70,10 @@ int main() {
     g[v].push_back({u, w});
   }
   Prim();
-  if (FoundMst())
+  if (FoundMst()){
+    cout << "Edge of MST: ";
     PrintMst();
-  else 
+  } else {
     printf("No MST possible\n");
+  }
 }
