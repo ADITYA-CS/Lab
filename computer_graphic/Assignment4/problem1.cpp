@@ -1,17 +1,17 @@
 #include<GL/glut.h>
-#include <vector>
+#include <cmath>
 using namespace std;
 
-int x1, y1, r;
-void Plot(float x, float y){
+int X, Y, r;
+void Plot(double x, double y){
     glBegin(GL_POINTS);
-	glVertex2f(x+x1, y+y1);
+	glVertex2f(x+X, y+Y);
 	glEnd();
 }
 
 void DrawCircle() {
     int v = 1, n = 0;
-    float s, x, y;
+    double s, x, y;
     while (v < r) {
         v  *= 2;
         n++;
@@ -19,14 +19,14 @@ void DrawCircle() {
     s = pow(2, -n);
     x = 0, y = r;
     while (x <= y) {
-        Plot(x + x1,y + y1);
-        Plot(-x + x1,y + y1);
-        Plot(-x + x1,-y + y1);
-        Plot(x + x1,-y + y1);
-        Plot(y + x1,x + y1);
-        Plot(-y + x1,x + y1);
-        Plot(-y + x1,-x + y1);
-        Plot(y + xc,-x + y1);
+        Plot(x + X,y + Y);
+        Plot(-x + X,y + Y);
+        Plot(-x + X,-y + Y);
+        Plot(x + X,-y + Y);
+        Plot(y + X,x + Y);
+        Plot(-y + X,x + Y);
+        Plot(-y + X,-x + Y);
+        Plot(y + X,-x + Y);
         x += s * y; 
         y -= s * x;
     }
@@ -51,8 +51,8 @@ void Init(void) {
 
 int main(int argc,char** argv) {
 
-    x1 = 300;
-    y1 = 300;
+    X = 300;
+    Y = 300;
     r = 200;
 
     glutInit(&argc,argv);
