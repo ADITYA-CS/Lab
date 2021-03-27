@@ -11,7 +11,7 @@ void Plot(int x, int y){
 
 void DrawCircle() {
     int x = 0;
-    int y = 0;
+    int y = r;
     float d = 1.25 - r;
     Plot(x, y);
     while (y > x) {
@@ -61,7 +61,7 @@ int main(int argc,char** argv) {
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowPosition(200,100);
     glutInitWindowSize(600,600);
-    glutCreateWindow("Assignment 3");
+    glutCreateWindow("Assignment 4");
     Init();
     glutDisplayFunc(Display);
     glutMainLoop();
