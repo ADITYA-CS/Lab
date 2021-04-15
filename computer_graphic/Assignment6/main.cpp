@@ -74,12 +74,8 @@ void helpscreen()
 	setFont(GLUT_BITMAP_TIMES_ROMAN_24);
 	glClearColor(1, 1, 1, 0); /*background for cover page*/
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0, 1, 0);
-	drawstring(550.0, 700.0, 0.0, "TIPS");
-	glColor3f(1, 0, 0);
-	drawstring(650.0, 700.0, 0.0, "AND");
-	glColor3f(0, 0, 1);
-	drawstring(750.0, 700.0, 0.0, "TRICKS");
+	glColor3f(0, 0, 0);
+	drawstring(650.0, 700.0, 0.0, "INSTRUCTION");
 	glColor3f(0.5, 0.1, 0.2);
 	drawstring(350.0, 640.0, 0.0, "Stop the traffic (Red Light)                                  MOUSE LEFT CLICK");
 	glColor3f(0.5, 0.1, 0.3);
