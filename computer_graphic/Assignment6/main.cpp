@@ -1027,7 +1027,7 @@ void myinit()
 	gluOrtho2D(0.0, 1346.0, 0.0, 728.0);
 }
 
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
