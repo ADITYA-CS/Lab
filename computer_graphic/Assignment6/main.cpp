@@ -72,7 +72,7 @@ void frontscreen(void)
 void helpscreen()
 {
 	setFont(GLUT_BITMAP_TIMES_ROMAN_24);
-	glClearColor(0, 0, 0, 0); /*background for cover page*/
+	glClearColor(1, 1, 1, 0); /*background for cover page*/
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0, 1, 0);
 	drawstring(550.0, 700.0, 0.0, "TIPS");
