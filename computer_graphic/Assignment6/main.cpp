@@ -75,23 +75,23 @@ void helpscreen()
 	glClearColor(1, 1, 1, 0); /*background for cover page*/
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0, 0, 0);
-	drawstring(650.0, 700.0, 0.0, "INSTRUCTION");
-	glColor3f(0.5, 0.1, 0.2);
-	drawstring(350.0, 640.0, 0.0, "Stop the traffic (Red Light)                                  MOUSE LEFT CLICK");
-	glColor3f(0.5, 0.1, 0.3);
-	drawstring(350.0, 540.0, 0.0, "Yellow Signal                                                        MOUSE RIGHT BUTTON (HOLD ON)");
-	glColor3f(0.5, 0.1, 0.4);
-	drawstring(350.0, 440.0, 0.0, "Green Signal                                                         MOUSE RIGHT BUTTON (RELEASE)");
-	glColor3f(0.4, 0.1, 0.5);
-	drawstring(350.0, 340.0, 0.0, "Allow vehicles to MOVE left to right                  PRESS 'L'");
-	glColor3f(0.5, 0.1, 0.6);
-	drawstring(350.0, 240.0, 0.0, "Allow vehicles to MOVE right to left                  PRESS 'R'");
-	glColor3f(0.5, 0.1, 0.7);
-	drawstring(350.0, 140.0, 0.0, "Speed up the vehicles                                           PRESS 'S'");
-	glColor3f(0.5, 0.1, 0.8);
-	drawstring(350.0, 90.0, 0.0, "Help                                                                      PRESS 'H'");
-	glColor3f(0.5, 0.1, 0.9);
-	drawstring(350.0, 40.0, 0.0, "Escape                                                                  PRESS 'ENTER'");
+	drawstring(590.0, 650.0, 0.0, "INSTRUCTION");
+	drawstring(400.0, 540.0, 0.0, "Red Signal");
+  drawstring(750.0, 540.0, 0.0, "MOUSE LEFT CLICK");
+  drawstring(400.0, 500.0, 0.0, "Yellow Signal");
+  drawstring(750.0, 500.0, 0.0, "MOUSE RIGHT BUTTON (HOLD ON)");
+  drawstring(400.0, 460.0, 0.0, "Green Signal");
+  drawstring(750.0, 460.0, 0.0, "MOUSE RIGHT BUTTON (RELEASE)");
+	drawstring(400.0, 420.0, 0.0, "MOVE left to right");
+  drawstring(750.0, 420.0, 0.0, "PRESS 'L'");
+	drawstring(400.0, 380.0, 0.0, "MOVE right to left");
+  drawstring(750.0, 380.0, 0.0, "PRESS 'R'");
+	drawstring(400.0, 340.0, 0.0, "Speed up the vehicles");
+  drawstring(750.0, 340.0, 0.0, "PRESS 'S'");
+	drawstring(400.0, 300.0, 0.0, "Help");
+  drawstring(750.0, 300.0, 0.0, "PRESS 'H'");
+	drawstring(400.0, 260.0, 0.0, "Escape");
+  drawstring(750.0, 260.0, 0.0, "PRESS 'ENTER'");
 	glFlush();
 }
 
@@ -207,7 +207,7 @@ void display(void)
 	if (traffic_regulator)
 		glutTimerFunc(50, update, 0);
 	glClear(GL_COLOR_BUFFER_BIT);
-	glClearColor(red, green, blue, 0); /*back ground for sky*/
+	glClearColor(0.26, 0.33, 0.35, 0); /*back ground for sky*/
 	road();
 	bus();
 	signal();
@@ -1028,7 +1028,7 @@ int main(int argc, char *argv[])
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(1346, 728);
-	glutInitWindowPosition(0, 0);
+	glutInitWindowPosition(50, 50);
 	glutCreateWindow("Traffic signal");
 
 	/*call back functions*/
