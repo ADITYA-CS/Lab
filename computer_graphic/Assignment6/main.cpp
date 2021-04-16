@@ -8,13 +8,13 @@ void car();
 void car2();
 void mydisplay();
 void display();
-void frontsreen();
+// void frontsreen();
 void drawstring();
 void setFont();
 void myMouse();
 void update();
 void control();
-void helpscreen();
+void instructions();
 GLint a = 300, b = -300, flag = 1, traffic_regulator = 1, control_keyl, control_keyr;
 GLfloat red = 0, blue = 1, green = .3;
 
@@ -39,37 +39,8 @@ void drawstring(float x, float y, float z, char *string)
 	}
 }
 
-void frontscreen(void)
-{
-	setFont(GLUT_BITMAP_TIMES_ROMAN_24);
-	glClearColor(0.15, 0.1, 0.01, 0); /*background for cover page*/
-	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1, 0, 0);
-	drawstring(450.0, 700.0, 0.0, "INSTITUTE OF TECHNOLOGY ");
-	glColor3f(0.7, 0, 1);
-	drawstring(330, 650, 0.0, "DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING");
-	glColor3f(1, 0.5, 0);
-	drawstring(530, 600, 0.0, "A MINI PROJECT ON");
-	glColor3f(1, 0, 0);
-	drawstring(360, 500, 0.0, "GRAPHICAL REPRESENTATION OF TRAFFIC SIGNALS");
-	glColor3f(1, 0.5, 0);
-	drawstring(200, 400, 0.0, "BY:");
-	glColor3f(1, 1, 1);
-	drawstring(100, 300, 0.0, "name");
-	glColor3f(1, 1, 1);
-	drawstring(100, 240, 0.0, "name");
-	glColor3f(1, 0.5, 0);
-	drawstring(980, 400, 0.0, "GUIDES:");
-	glColor3f(1, 1, 1);
-	drawstring(930, 300, 0.0, "name");
-	glColor3f(1, 1, 1);
-	drawstring(930, 240, 0.0, "  name");
-	glColor3f(1, 0.1, 1);
-	drawstring(543, 100, 0.0, "PRESS ENTER TO START");
-	glFlush();
-}
 
-void helpscreen()
+void instructions()
 {
 	setFont(GLUT_BITMAP_TIMES_ROMAN_24);
 	glClearColor(1, 1, 1, 0); /*background for cover page*/
@@ -181,7 +152,7 @@ void mydisplay(void)
 	if (flag == 0)
 		frontscreen();
 	if (flag == 1)
-		helpscreen();
+		instructions();
 	if (flag == 2)
 		display();
 	glutSwapBuffers();
