@@ -39,7 +39,6 @@ void drawstring(float x, float y, float z, char *string)
 	}
 }
 
-
 void instructions()
 {
 	setFont(GLUT_BITMAP_TIMES_ROMAN_24);
@@ -48,21 +47,21 @@ void instructions()
 	glColor3f(0, 0, 0);
 	drawstring(590.0, 650.0, 0.0, "INSTRUCTION");
 	drawstring(400.0, 540.0, 0.0, "Red Signal");
-  drawstring(750.0, 540.0, 0.0, "MOUSE LEFT CLICK");
-  drawstring(400.0, 500.0, 0.0, "Yellow Signal");
-  drawstring(750.0, 500.0, 0.0, "MOUSE RIGHT BUTTON (HOLD ON)");
-  drawstring(400.0, 460.0, 0.0, "Green Signal");
-  drawstring(750.0, 460.0, 0.0, "MOUSE RIGHT BUTTON (RELEASE)");
+	drawstring(750.0, 540.0, 0.0, "MOUSE LEFT CLICK");
+	drawstring(400.0, 500.0, 0.0, "Yellow Signal");
+	drawstring(750.0, 500.0, 0.0, "MOUSE RIGHT BUTTON (HOLD ON)");
+	drawstring(400.0, 460.0, 0.0, "Green Signal");
+	drawstring(750.0, 460.0, 0.0, "MOUSE RIGHT BUTTON (RELEASE)");
 	drawstring(400.0, 420.0, 0.0, "MOVE left to right");
-  drawstring(750.0, 420.0, 0.0, "PRESS 'L'");
+	drawstring(750.0, 420.0, 0.0, "PRESS 'L'");
 	drawstring(400.0, 380.0, 0.0, "MOVE right to left");
-  drawstring(750.0, 380.0, 0.0, "PRESS 'R'");
+	drawstring(750.0, 380.0, 0.0, "PRESS 'R'");
 	drawstring(400.0, 340.0, 0.0, "Speed up the vehicles");
-  drawstring(750.0, 340.0, 0.0, "PRESS 'S'");
+	drawstring(750.0, 340.0, 0.0, "PRESS 'S'");
 	drawstring(400.0, 300.0, 0.0, "Help");
-  drawstring(750.0, 300.0, 0.0, "PRESS 'H'");
+	drawstring(750.0, 300.0, 0.0, "PRESS 'H'");
 	drawstring(400.0, 260.0, 0.0, "Escape");
-  drawstring(750.0, 260.0, 0.0, "PRESS 'ENTER'");
+	drawstring(750.0, 260.0, 0.0, "PRESS 'ENTER'");
 	glFlush();
 }
 
