@@ -8,7 +8,6 @@ void car();
 void car2();
 void mydisplay();
 void display();
-// void frontsreen();
 void drawstring();
 void setFont();
 void myMouse();
@@ -87,11 +86,6 @@ void myKeyboard(unsigned char key, int x, int y)
 			flag = 2;
 			mydisplay();
 		}
-		if (flag == 0) //Ascii of 'enter' key is 13
-		{
-			flag = 1;
-			mydisplay();
-		}
 
 		break;
 	case 'l':
@@ -148,8 +142,6 @@ void myMouse(int button, int state, int x, int y)
 void mydisplay(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	if (flag == 0)
-		frontscreen();
 	if (flag == 1)
 		instructions();
 	if (flag == 2)
